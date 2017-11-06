@@ -1,14 +1,15 @@
 // Channel represents a mixer channel.
 // Connection to patterns also done here.
-Channel := Object clone do(
-  pattern ::= nil
+OperatorTable addOperator("$", 15)
 
-  $ := method(inputPattern,
-    if(inputPattern isNil) then(
+Channel := Object clone do(
+  p := "0"
+
+  $ := method(value,
+    ifNil(value,
       Exception raise("Pattern assign cannot be nil")
-    ) else (
-      setPattern(inputPattern)
     )
+
+    self p = value
   )
 )
-
