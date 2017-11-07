@@ -1,3 +1,5 @@
+/* doRelativeFile("M.io") */
+
 Sequence do (
   root := M root
   oct := 0 // octave transposition for root

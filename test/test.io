@@ -8,7 +8,7 @@ Directory files foreach(file,
   )
 )
 
-doFile("../Channel.io")
+/* doFile("../Channel.io") */
 
 System args = tests
 doFile("jasmineio/jasmine.io")

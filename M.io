@@ -1,14 +1,20 @@
 // M is the main interface. It's the same as the mixer in a DAW.
-M := Object clone do(
+Mstate := Object clone do(
   channels := list()
   root := 60
   bpm := 120
+  maximumNumberOfPatternsPerChannel := 1000
 
   // init method
   io := method(
     // add Master channel
     channels append(Channel clone)
   )
+)
 
-  squareBrackets := method(index, channels at(index))
+M := method(channelNumber,
+  if(channelNumber isNil,
+    return Mstate,
+    return Mstate channels at(channelNumber)
+  )
 )
