@@ -1,6 +1,6 @@
 Sequence do (
-  root := 60
-  oct := 0 // octave transposition for C-60
+  root := M root
+  oct := 0 // octave transposition for root
   props := Map clone
 
   curlyBrackets := method(

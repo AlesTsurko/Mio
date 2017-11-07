@@ -1,26 +1,25 @@
 Importer addSearchPath("..")
 
 M io
+Channel
 
-describe("Moire",
+describe("M",
   it("Should init master channel after being initialized",
     expect(M channels at(0) != nil) toBeTrue
   ),
 
-  it("Moire[0] should be of type Channel",
+  it("M[0] should be of type Channel",
     expect(M[0] type == "Channel") toBeTrue
   )
 )
 
+// import Channel
+Channel
 describe("Channel",
   it("Should assign pattern with $ operator",
     newPattern := "0101"
     M[0] $ newPattern
-    expect(M[0] pattern) toEqual(newPattern)
-  ),
-
-  it("Should throw an error when trying to set nil as a pattern",
-    expect(block(M[0]$)) toThrow("Pattern assign cannot be nil")
+    expect(M[0] p) toEqual(newPattern)
   )
 )
 

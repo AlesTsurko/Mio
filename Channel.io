@@ -4,12 +4,8 @@ OperatorTable addOperator("$", 15)
 
 Channel := Object clone do(
   p := "0"
+  solo := false
+  mute := false
 
-  $ := method(value,
-    ifNil(value,
-      Exception raise("Pattern assign cannot be nil")
-    )
-
-    self p = value
-  )
+  $ := method(value, self p = value)
 )
