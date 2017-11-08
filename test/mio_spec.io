@@ -14,21 +14,9 @@ describe("M",
 )
 
 describe("Channel",
-  it("Should return first pattern with $ method if arguments not specified",
-    testPat := list("0101")
-    //
-    M(0) p = list(testPat)
-    //
-    expect(M(0) $) toEqual(testPat)
-  ),
-
-  it("Should return default pattern with $ at specified index if value at index is nil",
-    defaultPat := list("0")
-    expect(M(0) $(999)) toEqual(defaultPat)
-  ),
 
   it("Should throw an exception if the user trying to get pattern from out of the maximum range",
-    err := "The maximum number of patterns per channel is " .. M maximumNumberOfPatternsPerChannel asString
+    err := "The maximum number of pattern slots per channel is " .. M maximumNumberOfPatternsPerChannel asString
     expect(block(M(0) $(1000))) toThrow(err)
   ),
 
@@ -55,11 +43,21 @@ describe("Channel",
     M(0) $(randSlotNumber, testPat at(0), testPat at(1), testPat at(2))
     //
     expect(M(0) $(randSlotNumber)) toEqual(testPat)
+  ),
+
+  it("Should return first pattern with $ method if arguments not specified",
+    testPat := "0101"
+    //
+    M(0) $(testPat)
+    //
+    expect(M(0) $) toEqual(list(testPat));
+  ),
+
+  it("Should return default pattern with $ at specified index if value at index is nil",
+    defaultPat := list("0")
+    expect(M(0) $(999)) toEqual(defaultPat)
   )
 )
-
-// import Pattern
-/* Pattern */
 
 describe("Pattern Properties",
   it("Should throw an error when user trying to assign nil in properties",
