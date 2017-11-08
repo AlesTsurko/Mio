@@ -10,7 +10,7 @@ Channel := Object clone do(
     self patternChain = PatternChain clone
   )
 
-  // pattern getter
+  // pattern setter/getter
   $ := method(
     // change size if needed
     if(self patternChain size != M maximumNumberOfPatternsPerChannel, 
@@ -19,17 +19,23 @@ Channel := Object clone do(
 
     selectedSlot := 0
     firstArgType := call evalArgAt(0) type
+    // get slot number (if any)
     if(firstArgType == "Number",
       selectedSlot = call evalArgAt(0)
     )
 
-    if(call message argCount < 2 and firstArgType != "Sequence",
+    // for cases: $, $(n)
+    if(call message argCount < 2 and (firstArgType == "Number" or firstArgType == "nil"),
       return self patternChain[selectedSlot]
     )
 
     patternStack := PatternStack clone
     call message arguments foreach(item,
       compiledItem := call sender doMessage(item)
+      
+      // convert to pattern if the input is raw string
+      if(compiledItem type == "Sequence", compiledItem = compiledItem asPattern)
+
       if(compiledItem type != "Number", patternStack append(compiledItem))
     )
     self patternChain atPut(selectedSlot, patternStack)

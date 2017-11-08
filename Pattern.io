@@ -1,10 +1,12 @@
-/* doRelativeFile("M.io") */
-
-Sequence do (
+Pattern := Object clone do(
   root := M root
   oct := 0 // octave transposition for root
   props := Map clone
+  string := nil
+)
 
+Sequence do (
+  // returns pattern with given props
   curlyBrackets := method(
     argsNum := call message argCount
     if(argsNum isOdd or argsNum == 0,
@@ -12,15 +14,21 @@ Sequence do (
     )
 
     key := ""
+    pattern := self asPattern
     call message arguments foreach(i, v,
       if(i isEven,
         key = v asString,
-        self props atPut(key, v)
+        pattern props atPut(key, v)
       )
     )
 
-    self
+    pattern
+  )
+
+  asPattern := method(
+    pattern := Pattern clone
+    pattern string = self
+    return pattern
   )
 )
 
-Pattern := Sequence clone
