@@ -12,6 +12,9 @@ Mstate := Object clone do(
   )
 )
 
+// make it singleton
+Mstate clone := Mstate
+
 M := method(channelNumber,
   if(channelNumber isNil,
     return Mstate,

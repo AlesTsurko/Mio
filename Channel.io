@@ -11,6 +11,7 @@ Channel := Object clone do(
   )
 
   // pattern setter/getter
+  // returns pattern
   $ := method(
     // change size if needed
     if(self patternChain size != M maximumNumberOfPatternsPerChannel, 
@@ -25,7 +26,7 @@ Channel := Object clone do(
     )
 
     // for cases: $, $(n)
-    if(call message argCount < 2 and (firstArgType == "Number" or firstArgType == "nil"),
+    if(call message argCount < 2 and firstArgType == "Number" or firstArgType == "nil",
       return self patternChain[selectedSlot]
     )
 
