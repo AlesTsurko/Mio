@@ -1,0 +1,5 @@
+location: lib
+sources:
+- name: jasmineio
+  repo: https://github.com/bekkopen/jasmineio
+  rev: master

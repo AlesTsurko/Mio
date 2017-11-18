@@ -11,4 +11,4 @@ Directory files foreach(file,
 /* doFile("../Channel.io") */
 
 System args = tests
-doFile("jasmineio/jasmine.io")
+doFile("../lib/jasmineio/jasmine.io")
