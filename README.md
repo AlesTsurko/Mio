@@ -2,11 +2,16 @@
 [gitman](https://github.com/jacebrowning/gitman)
 
 ### Prerequisites
-Clone the repository, than ```cd``` in the root and run:
+To install the dependencies `cd` in the root, then run:
 ```
 gitman install
 ```
+You have to import `Mio.io` before using the library:
+```Io
+doFile("/path/to/Mio.io")
+```
 
+### Tests
 To run tests (from the root directory):
 ```
 test/test.io
