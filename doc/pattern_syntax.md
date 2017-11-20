@@ -47,7 +47,6 @@ In C-major scale:
 - e  -  C
 - f  -  D
 
-
 `r` stays for (r)est. You can use it as a pitch to get a rest instead.
 
 ## Rhythm
@@ -171,7 +170,7 @@ Described above rhythmic rules also work here:
 ```
 <img src="img/0016.png" height="80" />
 
-## Octave Transposition
+## <a name="octave"></a>Octave Transposition
 To change octave you can use two `o`s between which you put a number of octaves to which you want to transpose.
 Positive number will transpose up, a negative one — down.
 This construct should be placed before a note which you want to transpose. All the next notes will be played in the new octave.
