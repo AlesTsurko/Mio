@@ -7,8 +7,8 @@
 * [Alterations](#alterations)
 
 ## Pitches
-Pitches are represented by numbers in hex format.
-From `0` to `f` they are the steps numbers of the chosen scale.
+Pitches represented by hex numbers.
+From `0` to `f` they are the step numbers of a chosen scale.
 For example in C-chromatic scale they are:
 
 - 0  -  C
@@ -47,10 +47,10 @@ In C-major scale:
 - e  -  C
 - f  -  D
 
-`r` stays for (r)est. You can use it as a pitch to get a rest instead.
+Use `r` in place of a pitch to get a `r`est instead.
 
 ## Rhythm
-The each note with a space after or before it is equal to 1 beat in duration. 
+The each note with a space after or before it equals to 1 beat in duration. 
 The 1 beat is usually equal to a quarter note, but it depends of the project's settings.
 
 So for example (C-chromatic at G clef):
@@ -70,7 +70,7 @@ But the next example is also 1 beat in duration:
 ```
 <img src="img/0002.png" height="70" />
 
-When there are few notes on the same beat, they share the beat between them proportionally:
+Few notes on the same beat share the beat proportionally:
 
 ```Io
 "00 0"
@@ -78,7 +78,7 @@ When there are few notes on the same beat, they share the beat between them prop
 
 <img src="img/0003.png" height="70" />
 
-Such groups can be made with parenthesis also. All the notes inside parenthesis are sharing the beat:
+Also you can make such groups using parenthesis. All the notes inside the parenthesis correspond the same beat:
 
 ```Io
 "(00 0) 0"
@@ -90,7 +90,7 @@ Such groups can be made with parenthesis also. All the notes inside parenthesis 
 ```
 <img src="img/0005.png" height="70" />
 
-Note that the above pattern is equal to:
+The above pattern can also be written as:
 
 ```Io
 "(0 0 (0 0) 0) r"
@@ -98,10 +98,10 @@ Note that the above pattern is equal to:
 
 There are methods for rhythmic constructions:
 
-* `+` is a tie. A note will be concatenated with another that has this sign instead of a pitch;
+* `+` is a tie. A note will be concatenated with another, if the last one has this sign in place of a pitch;
 * `.` makes a dot. Prolongs a note's duration for a half of its size;
-* `*` increases note's duration exponentially (i.e. doubles duration each time);
-* `:` decreases note's duration exponentially.
+* `*` increases a note's or group's duration exponentially (i.e. doubles duration);
+* `:` decreases a note's or group's duration exponentially.
 
 #### Examples:
 
@@ -140,26 +140,26 @@ There are methods for rhythmic constructions:
 ```
 <img src="img/0012.png" height="70" />
 
-These methods can be combined in chains:
+Also you can "chain" rhythmic methods:
 ```Io
 "0*. 0"
 ```
 <img src="img/0013.png" height="70" />
 
-And can be aplied to parenthesised groups:
+And apply them to parenthesised groups:
 ```Io
 "(00 0)**"
 ```
 <img src="img/0018.png" height="80" />
 
 ## Chords
-Inside of square brackets all the first-order beats will be played on one beat.
+All the first-order beats inside of square brackets will play on one beat.
 ```Io
 "[0 4 7]"
 ```
 <img src="img/0014.png" height="70" />
 
-Described above rhythmic rules also work here:
+Rhythmic rules also work here:
 ```Io
 "[0 4 7b]"
 ```
@@ -171,9 +171,8 @@ Described above rhythmic rules also work here:
 <img src="img/0016.png" height="80" />
 
 ## <a name="octave"></a>Octave Transposition
-To change octave you can use two `o`s between which you put a number of octaves to which you want to transpose.
-Positive number will transpose up, a negative one — down.
-This construct should be placed before a note which you want to transpose. All the next notes will be played in the new octave.
+To change octave put the value between `o`s in place, where you want transposition have to be happen. The value is a number of octaves to which you want to transpose.
+A positive number will transpose up, a negative one — down.
 
 ```Io
 "o1o 234 o-1o 210"
@@ -183,8 +182,8 @@ In C-major scale (G clef) will be:
 <img src="img/0017.png" height="80" />
 
 ## Alterations
-To alterate a pitch put a floating point number between two `#` before the pitch, that you want to alter.
-The number is a number of steps to alter. A positive one will alterate up, a negative — down. 
+To alter a pitch put a floating point number between two `#` before the pitch, which you want to alter.
+The number is a number of steps to alter. A positive one will alter up, a negative one — down. 
 
 In C-major scale (G clef):
 ```Io
@@ -192,7 +191,7 @@ In C-major scale (G clef):
 ```
 <img src="img/0019.png" height="80" />
 
-Microchromatic alterations are also possible here.
+Microchromatic alterations are also possible.
 ```Io
 "2#0.5#3"
 ```
