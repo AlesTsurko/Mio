@@ -171,11 +171,10 @@ Rhythmic rules also work here:
 <img src="img/0016.png" height="80" />
 
 ## <a name="octave"></a>Octave Transposition
-To change octave put the value between `o`s in place, where you want transposition have to be happen. The value is a number of octaves to which you want to transpose.
-A positive number will transpose up, a negative one — down.
+To transpose a part or the whole pattern to octave up use uppercase __o__ (`O`) before the part. Use lowercase __o__ (`o`) to transpose down. Number of __o__'s is the number of octaves to transpose.
 
 ```Io
-"o1o 234 o-1o 210"
+"O 234 o 210"
 ```
 In C-major scale (G clef) will be:
 
