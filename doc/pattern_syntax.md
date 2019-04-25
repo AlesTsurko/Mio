@@ -181,7 +181,7 @@ In C-major scale (G clef) will be:
 <img src="img/0017.png" height="80" />
 
 ## Alterations
-To alter a pitch up use `+` before the pitch. Use `-` to alter down. The number of `+`'s or `-` is the number of steps to alter.
+To alter a pitch up use `+` before the pitch. Use `-` to alter down. The number of `+`'s or `-`'s is the number of steps to alter.
 
 In C-major scale (G clef):
 ```Io
