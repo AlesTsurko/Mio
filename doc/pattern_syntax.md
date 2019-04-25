@@ -98,7 +98,7 @@ The above pattern can also be written as:
 
 There are methods for rhythmic constructions:
 
-* `+` is a tie. A note will be concatenated with another, if the last one has this sign in place of a pitch;
+* `_` is a tie. A note will be concatenated with another, if the last one has this sign in place of a pitch;
 * `.` makes a dot. Prolongs a note's duration for a half of its size;
 * `*` increases a note's or group's duration exponentially (i.e. doubles duration);
 * `:` decreases a note's or group's duration exponentially.
@@ -106,7 +106,7 @@ There are methods for rhythmic constructions:
 #### Examples:
 
 ```Io
-"0 + + 0" // (0 + 0 + 0) 0
+"0 _ _ 0" // (0 _ 0 _ 0) 0
 ```
 <img src="img/0006.png" height="70" />
 
@@ -116,7 +116,7 @@ There are methods for rhythmic constructions:
 <img src="img/0007.png" height="70" />
 
 ```Io
-"0++0"
+"0__0"
 ```
 <img src="img/0008.png" height="70" />
 
@@ -181,18 +181,19 @@ In C-major scale (G clef) will be:
 <img src="img/0017.png" height="80" />
 
 ## Alterations
-To alter a pitch put a floating point number between two `#` before the pitch, which you want to alter.
-The number is a number of steps to alter. A positive one will alter up, a negative one — down. 
+To alter a pitch up use `+` before the pitch. Use `-` to alter down. The number of `+`'s or `-` is the number of steps to alter.
 
 In C-major scale (G clef):
 ```Io
-"#-1# 5 6"
+"-5 6"
 ```
 <img src="img/0019.png" height="80" />
 
-Microchromatic alterations are also possible.
+~~Microchromatic alterations are also possible~~ __Not supported__ for now.
 ```Io
+# Deprecated
 "2#0.5#3"
 ```
-<img src="img/0020.png" height="80" />
+__Deprecated__
 
+<img src="img/0020.png" height="80" />
